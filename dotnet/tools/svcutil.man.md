@@ -168,3 +168,6 @@ Options:
 
  svcutil /t:xmlserializer myContractLibrary.exe
     - Generate serialization types for XmlSerializer types used by any Service Contracts in the assembly
+
+
+###### Release: v1.0

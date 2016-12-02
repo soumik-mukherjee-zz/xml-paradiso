@@ -10,7 +10,7 @@ Copyright 2016 Soumik Mukherjee
    See the License for the specific language governing permissions and
    limitations under the License.
 
-    ## Tagged: XmlContractFirstDotnet
+    ## Release: v1.0
 **/
 using System;
 using System.Collections.Generic;
