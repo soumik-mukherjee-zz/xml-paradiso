@@ -1,0 +1,30 @@
+<!--
+Copyright 2016 Soumik Mukherjee
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+       http://www.apache.org/licenses/LICENSE-2.0
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+   ## Tagged: XmlContractFirstDotnet
+-->
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<PropertyGroup>
+  <AssemblyName>RunDemo</AssemblyName>
+  <OutputPath>C:\MyConsoleApps\DemoPurchaseOrderService\</OutputPath>
+</PropertyGroup>
+  <ItemGroup>
+    <DataContracts Include="..\src\Org.Example.DataContracts\PurchaseOrderDataContract.cs" />
+    <SampleData Include="..\src\Org.Example.SampleData\PurchaseOrderSampleData.cs" />
+    <Services Include="..\src\Org.Example.Services\*PurchaseOrderService.cs" />
+    <Programs Include="..\src\Org.Example.Programs\RunPurchaseOrderServiceProgram.cs" />
+  </ItemGroup>
+  <Target Name="Build">
+    <MakeDir Directories="$(OutputPath)\PurchaseOrders" Condition="!Exists('$(OutputPath)\PurchaseOrders')" />
+    <Csc Sources="@(DataContracts);@(SampleData);@(Services);@(Programs)" OutputAssembly="$(OutputPath)$(AssemblyName).exe"/>
+  </Target>
+</Project>
