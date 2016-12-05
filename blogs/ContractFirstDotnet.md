@@ -1,4 +1,4 @@
-## Instructions for Release v1.0 - Building and working with this Example
+# Background
 
 ### What this example is about
 XML, and file based integrations, are not yet a thing of the past. And while they used to pose "happy" challenges to developers, the toolset community has forever evolved to reduce the "burden" of technology on us. Today we will be exploring a particular problem set:
@@ -28,8 +28,9 @@ We are dealing with a scenario, where data needs to be fetched/processed/transfo
                 [3.Business Logic in .NET]   [4.Serialization Logic in .NET]
 ```
 
+# Instructions for Release v1.0 - Building and working with this example
 
-
+### Pre-requisites
 1. A Windows PC. The following steps were tested on a Windows 10, 64-bit Home Edition PC.
 2. .NET framework installed, 4.0 and above should work.
 3. A text editor of your choice. I am using [Atom](https://atom.io/), but really anything would work. YOU DONT NEED Visual Studio, for this excercise.
@@ -152,7 +153,7 @@ Before we execute the build script we need to check and adjust (if required) whe
   ...
 </Project>
 ```
-You must have write access to the path mentioned here. Also take a note of the path for future reference. The ** PATH NEED NOT EXIST**.
+You must have write access to the path mentioned here. Also take a note of the path for future reference. The path **need not exist**, the build script will create it if it doesn't find the path.
 
 Change your directory to `buildfiles` and execute the command as shown below
 ``` bash
