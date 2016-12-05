@@ -42,8 +42,15 @@ The code we shall use is available for download from [here](https://github.com/s
 Open a windows command propmt and you change directory to where you extracted the codebase. Explore the contents with a `dir` command and you will see the following inside.
 ``` bash
 D:\>cd xml-paradiso-1.0
+```
 
+``` bash
 D:\xml-paradiso-1.0>dir
+```
+
+**Expected Output**
+
+``` bash
  Volume in drive D is LENOVO
  Volume Serial Number is C878-EEF6
 
@@ -68,8 +75,14 @@ Ignore the rest as of now. Change directory to `dotnet` and explore the codebase
 
 ``` bash
 D:\xml-paradiso-1.0>cd dotnet
+```
 
+``` bash
 D:\xml-paradiso-1.0\dotnet>dir
+```
+**Expected Output**
+
+``` bash
  Volume in drive D is LENOVO
  Volume Serial Number is C878-EEF6
 
@@ -96,9 +109,14 @@ D:\xml-paradiso-1.0\dotnet>set PATH=%PATH%;"C:\Program Files (x86)\Microsoft SDK
 ```
 Once done check that the following commands run successfully, to assert the previous command is doing its job.
 
+**Command #1**
 ``` bash
-Command#1
 D:\xml-paradiso-1.0\dotnet>svcutil /?
+```
+
+**Expected Output**
+
+``` bash
 Microsoft (R) Service Model Metadata Tool
 [Microsoft (R) Windows (R) Communication Foundation, Version 4.6.1055.0]
 Copyright (c) Microsoft Corporation.  All rights reserved.
@@ -110,10 +128,18 @@ USES:
  - Validate compiled service code.
  - Download metadata documents from running services.
  - Pre-generate serialization code.
- .....
- .....
- Command#2
- D:\xml-paradiso-1.0\dotnet>msbuild /?
+....
+```
+
+**Command #2**
+
+``` bash 
+D:\xml-paradiso-1.0\dotnet>msbuild /?
+```
+
+**Expected Output**
+
+``` bash
 Microsoft (R) Build Engine version 14.0.25123.0
 Copyright (C) Microsoft Corporation. All rights reserved.
 
@@ -122,14 +148,24 @@ Syntax:              MSBuild.exe [options] [project file]
 Description:         Builds the .....
  D:\xml-paradiso-1.0\dotnet>
  ```
+ 
 #### Build Step 1 : Processing the XSD
 From the command prompt issue the following commands:
-``` bash
-Command#1
-D:\xml-paradiso-1.0\dotnet>cd ..
 
-Command#2
+**Command #1**
+
+``` bash
+D:\xml-paradiso-1.0\dotnet>cd ..
+```
+**Command #2**
+
+``` bash
 D:\xml-paradiso-1.0>svcutil /t:code /dcOnly /namespace:"http://tempuri.org/PurchaseOrderSchema.xsd","Org.Example.DataContracts" /l:CS /serializer:DataContractSerializer /out:.\dotnet\src\Org.Example.DataContracts\PurchaseOrderDataContract.cs .\xml-schemas\PO.xsd
+```
+
+**Expected Output**
+
+``` bash
 Microsoft (R) Service Model Metadata Tool
 [Microsoft (R) Windows (R) Communication Foundation, Version 4.6.1055.0]
 Copyright (c) Microsoft Corporation.  All rights reserved.
@@ -158,8 +194,15 @@ You must have write access to the path mentioned here. Also take a note of the p
 Change your directory to `buildfiles` and execute the command as shown below
 ``` bash
 D:\xml-paradiso-1.0>cd dotnet\buildfiles
+```
 
+``` bash
 D:\xml-paradiso-1.0\dotnet\buildfiles>MSBuild DemoPurchaseOrderService.exe.build /t:Build
+```
+
+**Expected Output**
+
+``` bash
 Microsoft (R) Build Engine version 14.0.25123.0
 Copyright (C) Microsoft Corporation. All rights reserved.
 
@@ -191,10 +234,18 @@ Change your directory to the output directory and explore its contents
 
 ``` bash
 D:\xml-paradiso-1.0\dotnet\buildfiles>cd C:\MyConsoleApps\DemoPurchaseOrderService
+```
 
+``` bash
 D:\xml-paradiso-1.0\dotnet\buildfiles>c:
+```
 
+``` bash
 C:\MyConsoleApps\DemoPurchaseOrderService>dir
+```
+**Expected Output**
+
+``` bash
  Volume in drive C is Windows
  Volume Serial Number is 6CDE-EDB8
 
@@ -216,7 +267,9 @@ or
 ``` bash
 RunDemo.exe DummyPO2
 ```
-Expected output:
+
+**Expected Output**
+
 ``` bash
 Successfully generated PO file for PO Id: DummyPO1.
 Press any key to exit ...
